@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     }
 */
 
-    IEnumerator TypeSentence(string sentence, float delay)
+    public IEnumerator TypeSentence(string sentence, float delay)
     {
 
         yield return new WaitForSeconds(1);

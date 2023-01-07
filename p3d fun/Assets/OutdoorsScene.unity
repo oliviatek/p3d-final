@@ -1166,6 +1166,20 @@ Transform:
   m_Father: {fileID: 1465978701}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!115 &387532291
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 5
+  m_Script: 
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_ExecutionOrder: 0
+  m_ClassName: SceneObjectIDMapSceneAsset
+  m_Namespace: UnityEngine.Rendering.HighDefinition
 --- !u!1 &432432459
 GameObject:
   m_ObjectHideFlags: 0
@@ -9955,7 +9969,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 888119291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1247526971}
+  m_Script: {fileID: 387532291}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Entries:
@@ -10170,6 +10184,7 @@ GameObject:
   - component: {fileID: 1007350142}
   - component: {fileID: 1007350143}
   - component: {fileID: 1007350144}
+  - component: {fileID: 1007350145}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -10617,6 +10632,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 9.32
   m_Center: {x: 29.272932, y: 7.08697, z: -35.725445}
+--- !u!114 &1007350145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007350134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38efd82208203e4da1599518e1af168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  uiText: press e to open/close the door!
 --- !u!1001 &1035488576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16992,20 +17021,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1241900447}
   m_PrefabAsset: {fileID: 0}
---- !u!115 &1247526971
-MonoScript:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 5
-  m_Script: 
-  m_DefaultReferences: {}
-  m_Icon: {fileID: 0}
-  m_ExecutionOrder: 0
-  m_ClassName: SceneObjectIDMapSceneAsset
-  m_Namespace: UnityEngine.Rendering.HighDefinition
 --- !u!1 &1265367150
 GameObject:
   m_ObjectHideFlags: 0
@@ -17106,6 +17121,54 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1265805752
+GameObject:
+  m_ObjectHideFlags: 19
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265805754}
+  - component: {fileID: 1265805753}
+  m_Layer: 0
+  m_Name: SceneIDMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1265805753
+MonoBehaviour:
+  m_ObjectHideFlags: 19
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265805752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 387532291}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Entries:
+  - id: 0
+    category: 0
+    gameObject: {fileID: 822323556}
+--- !u!4 &1265805754
+Transform:
+  m_ObjectHideFlags: 19
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265805752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1319962598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17523,7 +17586,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31448
+  m_Name: pb_Mesh31464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22252,7 +22315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31226
+  m_Name: pb_Mesh31240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24643,7 +24706,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
-  m_LocalRotation: {x: 0.15360893, y: -0.039604932, z: 0.0061618113, w: 0.9873185}
+  m_LocalRotation: {x: 0.15360893, y: -0.039604887, z: 0.006161805, w: 0.9873185}
   m_LocalPosition: {x: -83.740005, y: 8.35, z: 152}
   m_LocalScale: {x: 0.97348, y: 0.97348, z: 0.97348}
   m_ConstrainProportionsScale: 0
@@ -32567,6 +32630,7 @@ GameObject:
   - component: {fileID: 919132147528844140}
   - component: {fileID: 1729396286}
   - component: {fileID: 1729396284}
+  - component: {fileID: 919132147528844141}
   m_Layer: 0
   m_Name: incense
   m_TagString: Untagged
@@ -32587,6 +32651,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.09
   m_Center: {x: 0, y: 0.07, z: 0}
+--- !u!114 &919132147528844141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147528844139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38efd82208203e4da1599518e1af168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  uiText: press G to pick up the incense, and F to release it!
 --- !u!4 &924708628845528011
 Transform:
   m_ObjectHideFlags: 0
@@ -33009,7 +33087,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070925442727531061}
-  m_LocalRotation: {x: 0.15360893, y: -0.039604932, z: 0.0061618113, w: 0.9873185}
+  m_LocalRotation: {x: 0.15360893, y: -0.039604887, z: 0.006161805, w: 0.9873185}
   m_LocalPosition: {x: -83.740005, y: 8.35, z: 152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
