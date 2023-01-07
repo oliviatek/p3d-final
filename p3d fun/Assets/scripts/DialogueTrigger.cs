@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
 	[SerializeField] private string playerTag;
+
 	public Dialogue dialogue;
 
 	
