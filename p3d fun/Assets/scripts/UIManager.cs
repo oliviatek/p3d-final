@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
 
     public Text uiText;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,9 @@ public class UIManager : MonoBehaviour
     public IEnumerator TypeSentence(string sentence, float delay)
     {
 
+        animator.SetBool("IsOpen", true);
+
+
         yield return new WaitForSeconds(1);
         uiText.text = "";
         uiText.enabled = true;
@@ -41,6 +45,7 @@ public class UIManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(delay);
+        animator.SetBool("IsOpen", false);
         uiText.enabled = false;
     }
 
