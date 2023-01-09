@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
 
+
    
 
     private Queue<string> sentences;
@@ -24,7 +25,7 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public void StartDialogue(Dialogue dialogue) {
+    public void StartDialogue(Dialogue dialogue, AudioSource sound) {
 
         Debug.Log("Starting conversation with " + dialogue.name);
 
@@ -38,11 +39,11 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        DisplayNextSentence(sound);
 
     }
 
-    public void DisplayNextSentence() {
+    public void DisplayNextSentence(AudioSource sound) {
         if (sentences.Count==0) {
             EndDialogue();
             return;
@@ -50,13 +51,14 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence, sound));
     }
 
-    IEnumerator TypeSentence (string sentence) {
+    IEnumerator TypeSentence (string sentence, AudioSource sound) {
         dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray()) {
             dialogueText.text+=letter;
+            sound.Play();
             yield return null;
         }
     }

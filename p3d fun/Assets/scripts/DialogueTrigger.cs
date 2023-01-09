@@ -7,18 +7,21 @@ public class DialogueTrigger : MonoBehaviour
 	[SerializeField] private string playerTag;
 
 	public Dialogue dialogue;
+	public bool hasTriggered = false;
+	public AudioSource sound;
 
 	
 	
 
 	public void TriggerDialogue() {
 
-		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+		FindObjectOfType<DialogueManager>().StartDialogue(dialogue, sound);
 
 	}
 
 	public void OnTriggerEnter(Collider other){
-		if(other.tag == playerTag) {
+		if(other.tag == playerTag && hasTriggered == false) {
+			hasTriggered = true;
 			TriggerDialogue();
 		}
 	}
