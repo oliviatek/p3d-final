@@ -8,12 +8,14 @@ public class UITrigger : MonoBehaviour
     [SerializeField] private string playerTag;
     [SerializeField] private string uiText;
     public bool hasCalled = false;
+    public AudioSource sound;
 
     // Start is called before the first frame update
+
     public void TriggerUI()
     {
         hasCalled = true;
-        StartCoroutine(FindObjectOfType<UIManager>().TypeSentence(uiText, 3));
+        StartCoroutine(FindObjectOfType<UIManager>().TypeSentence(uiText, 3, sound));
         
     }
 

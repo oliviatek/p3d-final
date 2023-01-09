@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 
+
         
 {
 
     public Text uiText;
     public Animator animator;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
         uiText.enabled = false;
-        StartCoroutine(TypeSentence("pssst...use WSAD to walk around!", 3));
+        StartCoroutine(TypeSentence("pssst...use WSAD to walk around!", 3, sound));
         
     }
 /*
@@ -29,10 +31,11 @@ public class UIManager : MonoBehaviour
     }
 */
 
-    public IEnumerator TypeSentence(string sentence, float delay)
+    public IEnumerator TypeSentence(string sentence, float delay, AudioSource sound)
     {
 
         animator.SetBool("IsOpen", true);
+        sound.Play();
 
 
         yield return new WaitForSeconds(1);

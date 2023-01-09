@@ -56,9 +56,9 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence, AudioSource sound) {
         dialogueText.text = "";
+        sound.Play();
         foreach(char letter in sentence.ToCharArray()) {
             dialogueText.text+=letter;
-            sound.Play();
             yield return null;
         }
     }
