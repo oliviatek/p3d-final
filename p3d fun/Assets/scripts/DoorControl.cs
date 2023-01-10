@@ -25,14 +25,14 @@ public class DoorControl : MonoBehaviour
         {
             if (open==false)
             {
-                Debug.Log("Opening...");
+             //   Debug.Log("Opening...");
                 animator.SetTrigger(openTrigger);
                 open = true;
             }
 
             else
             {
-                Debug.Log("Closing...");
+              //  Debug.Log("Closing...");
                 animator.SetTrigger(closeTrigger);
                 open = false;
             }
@@ -44,7 +44,7 @@ public class DoorControl : MonoBehaviour
         //Debug.Log("In here");
         if (other.tag == playerTag)
         {
-            Debug.Log("Hi!");
+          //  Debug.Log("Hi!");
             inTrigger = true;
 
         }
@@ -52,7 +52,7 @@ public class DoorControl : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Bye!");
+      //  Debug.Log("Bye!");
         if (other.tag == playerTag)
         {
             inTrigger = false;

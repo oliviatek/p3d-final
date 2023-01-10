@@ -9,11 +9,18 @@ public class IncenseDrop : MonoBehaviour
     public string incenseTag;
     public Dialogue dialogue;
     public AudioSource sound;
+    public GameObject upperZone;
+
+
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == incenseTag && hasDropped == false)
+        Debug.Log("hiiii");
+        if (other.tag == incenseTag) { Debug.Log("bello"); }
+        
+        if (other.tag == incenseTag && hasDropped == false && upperZone.GetComponent<PlayerUpstairs>().playerUpstairs == true)
         {
+     
             hasDropped = true;
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue, sound);
             

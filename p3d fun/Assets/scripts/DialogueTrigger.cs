@@ -15,6 +15,8 @@ public class DialogueTrigger : MonoBehaviour
 
 	public void TriggerDialogue() {
 
+		StopAllCoroutines();
+
 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue, sound);
 
 	}

@@ -15,8 +15,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uiText.enabled = false;
-        StartCoroutine(TypeSentence("pssst...use WSAD to walk around!", 3, sound));
+       // uiText.enabled = false;
+        StartCoroutine(TypeSentence("pssst...use WSAD to walk around!", 2, sound));
         
     }
 /*
@@ -35,12 +35,11 @@ public class UIManager : MonoBehaviour
     {
 
         animator.SetBool("IsOpen", true);
-        sound.Play();
-
-
+        
         yield return new WaitForSeconds(1);
+        sound.Play();
         uiText.text = "";
-        uiText.enabled = true;
+     //   uiText.enabled = true;
         foreach (char letter in sentence.ToCharArray())
         {
             uiText.text += letter;
@@ -48,8 +47,10 @@ public class UIManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(delay);
+      //  uiText.enabled = false;
         animator.SetBool("IsOpen", false);
-        uiText.enabled = false;
+        yield return new WaitForSeconds(1);
+        uiText.text = "";
     }
 
 
